@@ -1,0 +1,3 @@
+Fonts: DM Sans and Manrope, distributed under the SIL Open Font License 1.1.
+Source: https://fonts.google.com/specimen/DM+Sans and https://fonts.google.com/specimen/Manrope
+None
