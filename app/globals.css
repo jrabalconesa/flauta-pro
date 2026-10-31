@@ -130,3 +130,5 @@ body,button,input,select,textarea{font-family:'DM Sans',system-ui,sans-serif}h1,
 /* Shared music navigation: canonical shapes from Piano PRO. */
 .pro-nav-icon{display:block;width:26px;height:26px;flex:0 0 26px;color:inherit;object-fit:contain}.pro-nav-aia{display:grid;place-items:center;font:800 13px/1 system-ui,sans-serif;letter-spacing:-.7px}
 @media(max-width:699px){.pro-nav-icon{width:28px;height:28px;flex-basis:28px}.pro-nav-aia{font-size:14px}}
+
+.nav .pro-nav-icon{flex:0 0 26px}.nav .pro-nav-aia{font-weight:800}@media(max-width:699px){.nav .pro-nav-icon{flex-basis:28px}}
