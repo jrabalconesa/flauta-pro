@@ -7,7 +7,7 @@
   "files": {
     "app/page.tsx": "0c588e17a43025e2a0b53e375c31714fd5ae713001fd011fbc55c7d3ed5a9dbe",
     "app/audio.ts": "bbc6553ca2b8dc1ac2937c1dc1397632152e2975410396c4c52a252a59e12642",
-    "app/pro-nav-icon.tsx": "4bdf46479e596762ee0916be713230ec3c931b0d13ed156d9774d1004ef7ddf3",
+    "app/pro-nav-icon.tsx": "1f4f532dabc4945e27e52d64a36f10a7fffbd050e3b02df55b85da18d04f30b9",
     "app/globals.css": "6314a94fdf0b5a7110d97fd33df94de8ba61a3f623b6877278af94d064c0ad0b",
     "app/backup-panel.tsx": "0399baf75d2693ebda6d339d6c2cfb759a3039d250fb49d19ae5e6701bc4688e",
     "lib/catalog.ts": "975bfb66daaf77875ecc928862562bd43cfbc762c0fced4a12762fbada282d31",
