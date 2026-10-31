@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "app": "flauta-pro",
+  "repository": "jrabalconesa/flauta-pro",
+  "site_project_id": "appgprj_6adfb19c19a081918e1fef80cacd0a8e",
+  "updated": "2026-10-31",
+  "files": {
+    "app/page.tsx": "35e5c555ba03003057fef4fa9b81f34e39638785851e6bb663c1514e0e7b7fd7",
+    "app/audio.ts": "bbc6553ca2b8dc1ac2937c1dc1397632152e2975410396c4c52a252a59e12642",
+    "app/pro-nav-icon.tsx": "4bdf46479e596762ee0916be713230ec3c931b0d13ed156d9774d1004ef7ddf3",
+    "app/globals.css": "53cba40176035973dbb79d523811c791887b4d98886f857cd8375fabd7d44934",
+    "app/backup-panel.tsx": "0399baf75d2693ebda6d339d6c2cfb759a3039d250fb49d19ae5e6701bc4688e",
+    "lib/catalog.ts": "975bfb66daaf77875ecc928862562bd43cfbc762c0fced4a12762fbada282d31",
+    "lib/pitch.ts": "75382a7765f8164ae159c44e514ce8de27d05fe11bdcf3de1426ba1176f0815a",
+    "lib/backup.ts": "316830425a3f4ec60029b4d92f978e7302e09ada7c00b273b34fe6ba07d649e2"
+  },
+  "policy": "three-way: compare both against these hashes; transfer one-sided changes; stop on conflicting edits; preserve platform adapters and Site audience; never sync user data automatically"
+}

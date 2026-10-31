@@ -5,7 +5,9 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite --host 0.0.0.0",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "build:pages": "node scripts/build-pages.mjs",
+    "test": "node --experimental-strip-types --test tests/backup.test.mjs"
   },
   "dependencies": {
     "react": "19.2.6",

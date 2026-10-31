@@ -1,3 +1,5 @@
+import {EXERCISES} from './catalog';
+import {makeBackup,validateBackup,mergeBackup,recordKey,MAX_BACKUP_BYTES} from './backup';
 // GitHub Pages has no server. Keep this edition's records in this browser.
 let database: Promise<IDBDatabase> | undefined;
 const urls = new Map<string, string>();
@@ -30,6 +32,22 @@ async function mutate(action: 'put'|'delete', value: any) {
 export async function localFetch(path: string, options: RequestInit = {}) {
   try {
     const method = options.method || 'GET';
+    if (path === '/api/backup') {
+      const ids=EXERCISES.map(e=>e.id);
+      if(method==='GET')return Response.json(makeBackup(await records(),ids));
+      if(method!=='POST')return Response.json({error:'Método no permitido'},{status:405});
+      if(String(options.body).length>MAX_BACKUP_BYTES)throw Error('La copia supera el máximo de 2 MB.');
+      const backup=validateBackup(JSON.parse(String(options.body)),ids);
+      const database=await db();
+      const result=await new Promise<any>((resolve,reject)=>{
+        const tx=database.transaction('records','readwrite'),store=tx.objectStore('records');
+        const request=store.getAll();let merged:any;
+        request.onsuccess=()=>{try{merged=mergeBackup(request.result,backup);for(const row of merged.writes)store.put({...row,id:recordKey(row)});}catch(e){tx.abort();reject(e);}};
+        tx.oncomplete=()=>resolve(merged);
+        tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Importación cancelada. No se guardó ningún dato.'));
+      });
+      return Response.json({ok:true,attemptsAdded:result.attemptsAdded,duplicates:result.duplicates});
+    }
     if (path === '/api/state') {
       if (method === 'GET') return Response.json({rows:(await records()).filter(r=>r.kind!=='file')});
       const {kind,value} = JSON.parse(String(options.body));
