@@ -137,3 +137,8 @@ body,button,input,select,textarea{font-family:'DM Sans',system-ui,sans-serif}h1,
 
 /* Cross-platform sync keeps the existing PRO palette and typography. */
 .pro-auto-sync{margin-bottom:20px}.pro-auto-sync .backup-actions{display:flex;flex-wrap:wrap;gap:10px}.pro-auto-sync p{line-height:1.55}.pro-auto-sync small{display:block;line-height:1.5}.sync-bridge{max-width:650px;margin:24px auto;padding:16px}.sync-bridge .card{padding:26px}.sync-bridge h1{font-size:28px}.sync-bridge p{line-height:1.6;margin:16px 0}.sync-bridge button{max-width:100%;white-space:normal}.sync-bridge strong{overflow-wrap:anywhere}
+
+/* Fase 1: grupos funcionales PRO y barra móvil de cinco accesos. */
+.pro-nav-group{display:flex;flex-direction:column;gap:2px;margin-bottom:12px}.pro-nav-group-title{padding:8px 13px 5px;color:#967c79;font-size:9px;letter-spacing:.1em;font-weight:800;line-height:1.3}.pro-nav-group .nav{margin-bottom:2px;padding-block:10px;min-height:43px}.mobile-section-menu .pro-nav-group{width:100%;margin:3px 0 13px}.mobile-section-menu .pro-nav-group-title{padding:8px 3px}.mobile-section-menu nav{display:flex;flex-direction:column}
+@media(min-width:700px) and (max-width:1050px){.pro-nav-group-title{font-size:8px}.pro-nav-group .nav{padding-inline:8px;gap:8px}}
+@media(max-width:699px){.bottom-nav{grid-template-columns:repeat(5,minmax(0,1fr))!important}.bottom-nav button{min-width:0;font-size:10px}.bottom-nav button svg{width:21px;height:21px}.mobile-section-menu .pro-nav-group .nav{min-height:45px}}
