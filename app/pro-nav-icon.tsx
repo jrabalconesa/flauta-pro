@@ -4,5 +4,8 @@ paths.notas='<path d="M11 3h10v26H11zM16 3v26" stroke-width="1"/><circle cx="16"
 paths.ritmo='<path d="M9 9h14l4 20H5zM16 11v13M16 24l5-8"/><circle cx="16" cy="24" r="1.2"/><path d="M10 6V2l4 2v5"/><ellipse cx="8" cy="7" rx="2.5" ry="1.6"/><path d="M23 6V2l4 2v5"/><ellipse cx="21" cy="7" rx="2.5" ry="1.6"/>';
 paths.progreso='<path d="M4 27V6M4 27h25M8 23l7-7 5 3 8-11M22 8h6v6"/>';
 paths.profesor='<rect x="11" y="3" width="18" height="17" rx="1"/><path d="M15 8h10M15 12h7M7 29V15m0 4 7-5M3 29v-9a4 4 0 0 1 8 0v9"/><circle cx="7" cy="9" r="4"/>';
-const aliases:Record<string,string>={"practica": "practicar", "ruta": "recorrido", "acordes": "armonia", "caged": "armonia", "ritmos": "ritmo", "afinador": "afinador"};
+paths.perfiles='<circle cx="12" cy="10" r="4"/><circle cx="24" cy="12" r="3"/><path d="M3 28v-4c0-10 18-10 18 0v4M23 20c5 0 7 3 7 8"/>';
+paths.instrumento='<rect x="5" y="3" width="22" height="26" rx="2"/><path d="M10 9h12M10 15h5M10 21h12"/>';
+paths.canciones='<path d="M7 3h18v26H7zM10 9h12M10 14h12M10 19h12M17 12v11"/><ellipse cx="14" cy="23" rx="3" ry="2"/>';
+const aliases:Record<string,string>={"practica": "practicar", "ruta": "recorrido", "repertorio": "canciones", "acordes": "armonia", "caged": "armonia", "ritmos": "ritmo", "afinador": "afinador"};
 export default function ProNavIcon({name}:{name:string}){const id=aliases[name]||name;return id==='aia'?<span className="pro-nav-icon pro-nav-aia" aria-hidden="true">AIA</span>:<svg className="pro-nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false" dangerouslySetInnerHTML={{__html:paths[id]||paths.menu}}/>}

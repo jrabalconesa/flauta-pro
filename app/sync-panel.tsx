@@ -3,7 +3,7 @@ import {useEffect,useRef,useState} from 'react';
 import {request} from '../lib/platform';
 import {validateBackup,Backup} from '../lib/backup';
 import {EXERCISES} from '../lib/catalog';
-import {SITES_ORIGIN,PAGES_ORIGIN,SYNC_CHANNEL,SYNC_EVENT,acceptsMessage,synchronize} from '../lib/sync-protocol';
+import {SITES_ORIGIN,PAGES_ORIGIN,SYNC_CHANNEL,SYNC_EVENT,acceptsMessage,synchronize,pilotProfile} from '../lib/sync-protocol';
 const ids=EXERCISES.map(e=>e.id);
 async function json(path:string,options?:RequestInit){const r=await request(path,options);const d=await r.json();if(!r.ok)throw Error((d as any).error||'No se pudo acceder a los datos.');return d;}
 export default function SyncPanel({onSynced}:{onSynced:()=>Promise<void>}){
@@ -21,7 +21,7 @@ export default function SyncPanel({onSynced}:{onSynced:()=>Promise<void>}){
    busy=true;queued=false;setState('syncing');const runToken=token;
    try{
     let changed=false;
-    await synchronize(async()=>validateBackup(await json('/api/backup'),ids),backup=>new Promise<Backup>((resolve,reject)=>{
+    await synchronize(async()=>{const backup=validateBackup(await json('/api/backup'),ids);pilotProfile(backup);return backup;},backup=>new Promise<Backup>((resolve,reject)=>{
      if(stopped||token!==runToken){reject(Error('Conexión cerrada.'));return;}
      const id=++nextId;const timer=setTimeout(()=>{pending=null;reject(Error('Sites no responde. Revisa la ventana de conexión o vuelve a conectar.'));},20000);pending={id,resolve,reject,timer};post({type:'exchange',id,backup});
     }),async backup=>{if(stopped||token!==runToken)return;const result:any=await json('/api/backup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(backup)});changed=result.duplicates<backup.rows.length;});
@@ -41,7 +41,7 @@ export default function SyncPanel({onSynced}:{onSynced:()=>Promise<void>}){
    if(!popup){setStatus('El navegador ha bloqueado la ventana. Permite ventanas emergentes para conectar con Sites.');return;}
    setState('waiting');setStatus('En la ventana de Sites, inicia sesión si hace falta y revisa la autorización.');
    const currentToken=token;const started=Date.now();
-   const hello=async()=>{if(stopped||token!==currentToken)return;if(popup?.closed){stop();return;}if(Date.now()-started>180000){stop();setStatus('La autorización ha caducado. Vuelve a conectar.');return;}try{const b=validateBackup(await json('/api/backup'),ids);if(token===currentToken)post({type:'hello',profile:b.rows.find(r=>r.kind==='profile')?.name||'Sin perfil guardado',attempts:b.rows.filter(r=>r.kind==='attempt').length});}catch{setStatus('No se pudo leer el progreso local. Conserva una copia JSON antes de reintentar.');}};
+   const hello=async()=>{if(stopped||token!==currentToken)return;if(popup?.closed){stop();return;}if(Date.now()-started>180000){stop();setStatus('La autorización ha caducado. Vuelve a conectar.');return;}try{const b=validateBackup(await json('/api/backup'),ids),identity=pilotProfile(b);if(token===currentToken)post({type:'hello',profile:identity.name,attempts:b.rows.filter(r=>r.kind==='attempt').length});}catch(e){setStatus((e as Error).message+' Las copias JSON siguen disponibles.');}};
    void hello();helloTimer=setInterval(()=>void hello(),1500);
   }
   const timer=setInterval(()=>void run(),15000);const saved=()=>{if(!busy)void run();else queued=true;};

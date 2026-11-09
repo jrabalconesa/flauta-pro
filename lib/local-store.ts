@@ -1,4 +1,5 @@
 import {EXERCISES} from './catalog';
+import {canonicalLocalRows} from './local-records';
 import {makeBackup,validateBackup,mergeBackup,recordKey,MAX_BACKUP_BYTES} from './backup';
 // GitHub Pages has no server. Keep this edition's records in this browser.
 let database: Promise<IDBDatabase> | undefined;
@@ -15,7 +16,7 @@ async function records() {
   const database = await db();
   return new Promise<any[]>((resolve, reject) => {
     const request = database.transaction('records').objectStore('records').getAll();
-    request.onsuccess = () => resolve(request.result.sort((a,b) => b.date-a.date));
+    request.onsuccess = () => resolve(canonicalLocalRows(request.result));
     request.onerror = () => reject(request.error);
   });
 }
@@ -42,19 +43,44 @@ export async function localFetch(path: string, options: RequestInit = {}) {
       const result=await new Promise<any>((resolve,reject)=>{
         const tx=database.transaction('records','readwrite'),store=tx.objectStore('records');
         const request=store.getAll();let merged:any;
-        request.onsuccess=()=>{try{merged=mergeBackup(request.result,backup);for(const row of merged.writes)store.put({...row,id:recordKey(row)});}catch(e){tx.abort();reject(e);}};
+        request.onsuccess=()=>{try{merged=mergeBackup(canonicalLocalRows(request.result),backup);for(const row of merged.writes)store.put({...row,id:recordKey(row)});}catch(e){tx.abort();reject(e);}};
         tx.oncomplete=()=>resolve(merged);
         tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Importación cancelada. No se guardó ningún dato.'));
       });
       return Response.json({ok:true,attemptsAdded:result.attemptsAdded,duplicates:result.duplicates});
     }
     if (path === '/api/state') {
-      if (method === 'GET') return Response.json({rows:(await records()).filter(r=>r.kind!=='file')});
+      if (method === 'GET') return Response.json({rows:(await records()).filter(r=>['profile','attempt','session'].includes(r.kind))});
       const {kind,value} = JSON.parse(String(options.body));
       if (!['profile','attempt','session'].includes(kind) || !value) throw Error('Datos no válidos.');
-      const id = kind === 'attempt' ? 'attempt_'+(value.attemptId || crypto.randomUUID()) : kind;
-      await mutate('put', {...value,id,kind,date:Date.now()});
+      const payload={...value,kind,date:Date.now()};if(kind==='attempt'&&!payload.attemptId)payload.attemptId=crypto.randomUUID();const id=recordKey(payload);
+      const checked=validateBackup({app:'flauta-pro',version:2,exportedAt:Date.now(),rows:[payload]},EXERCISES.map(e=>e.id)).rows[0];await mutate('put',{...checked,id});
       return Response.json({ok:true,id});
+    }
+    if (path === '/api/recordings') {
+      if(method==='GET'){
+        const recordings=(await records()).filter(r=>r.kind==='recording').map(({blob,...row})=>{
+          if(!urls.has(row.id))urls.set(row.id,URL.createObjectURL(blob));
+          return {...row,url:urls.get(row.id)};
+        });return Response.json({recordings});
+      }
+      if(method==='DELETE'){
+        const {id}=JSON.parse(String(options.body));
+        if(!(await records()).some(r=>r.id===id&&r.kind==='recording'))throw Error('Grabación no encontrada.');
+        await mutate('delete',id);if(urls.has(id))URL.revokeObjectURL(urls.get(id)!);urls.delete(id);return Response.json({ok:true});
+      }
+      if(method!=='POST')return Response.json({error:'Método no permitido'},{status:405});
+      const data=options.body as FormData,file=data.get('file') as File,metadata=JSON.parse(String(data.get('metadata')));
+      if(!file||file.size<16||file.size>12*1024*1024)throw Error('La grabación debe ocupar entre 16 bytes y 12 MB.');
+      const type=file.type.split(';')[0];if(!['audio/webm','audio/mp4','audio/ogg'].includes(type))throw Error('Formato de audio no compatible.');
+      const rows=await records(),profile=rows.find(r=>r.kind==='profile');
+      const learners=profile?.learners||[{id:'default',instrumentId:'flute-1'}];
+      if(!metadata||!EXERCISES.some(e=>e.id===metadata.exerciseId)||!learners.some((l:any)=>l.id===metadata.profileId&&l.instrumentId===metadata.instrumentId))throw Error('Datos de práctica no válidos.');
+      if(rows.filter(r=>r.kind==='recording').length>=100)throw Error('Ya hay 100 grabaciones. Descarga alguna para guardar otra.');
+      const a=new Uint8Array(await file.arrayBuffer()),text=new TextDecoder();
+      if(!(type==='audio/webm'&&a[0]===0x1a&&a[1]===0x45&&a[2]===0xdf&&a[3]===0xa3||type==='audio/ogg'&&text.decode(a.slice(0,4))==='OggS'||type==='audio/mp4'&&text.decode(a.slice(4,8))==='ftyp'))throw Error('El archivo no coincide con su formato.');
+      await mutate('put',{id:crypto.randomUUID(),kind:'recording',blob:file,type,size:file.size,date:Date.now(),profileId:metadata.profileId,instrumentId:metadata.instrumentId,exerciseId:metadata.exerciseId});
+      return Response.json({ok:true});
     }
     if (path === '/api/files') {
       if (method === 'GET') {
