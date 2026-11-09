@@ -1,0 +1,3 @@
+import {note} from './catalog.ts';
+import type {Exercise} from './catalog.ts';
+export function midiFile(ex:Exercise,speed:number){const bytes:number[]=[];const vl=(n:number)=>{const a=[n&127];while(n>>=7)a.unshift((n&127)|128);return a};const tempo=Math.round(60000000/(ex.bpm*speed));bytes.push(0,255,81,3,(tempo>>16)&255,(tempo>>8)&255,tempo&255,0,255,88,4,ex.beatsPerBar??4,2,24,8,0,192,74);let pending=0;for(const e of ex.events){if(e.n){bytes.push(...vl(pending),144,note(e.n).midi,90,...vl(e.b*480),128,note(e.n).midi,0);pending=0}else pending+=e.b*480}bytes.push(...vl(pending),255,47,0);const len=bytes.length;return new Uint8Array([77,84,104,100,0,0,0,6,0,0,0,1,1,224,77,84,114,107,(len>>>24)&255,(len>>>16)&255,(len>>>8)&255,len&255,...bytes])}

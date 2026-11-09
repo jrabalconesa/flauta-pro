@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {acceptsMessage,SITES_ORIGIN,SYNC_CHANNEL,synchronize} from '../lib/sync-protocol.ts';
+import {acceptsMessage,SITES_ORIGIN,SYNC_CHANNEL,synchronize,pilotProfile} from '../lib/sync-protocol.ts';
 import {makeBackup,mergeBackup,recordKey} from '../lib/backup.ts';
 const token='a'.repeat(64),source={},valid={origin:SITES_ORIGIN,source,data:{channel:SYNC_CHANNEL,token}};
 test('only the pinned window, exact origin, protocol and current connection token are accepted',()=>{
@@ -11,6 +11,14 @@ test('only the pinned window, exact origin, protocol and current connection toke
 const date=1700000000000,ids=['primer-si'];
 const attempt=id=>({kind:'attempt',date,exerciseId:'primer-si',mode:'free',pitchScore:90,rhythmScore:null,coverage:100,reliable:true,completed:true,attemptId:id});
 const profile=(name,date)=>({kind:'profile',date,name,system:'barroca',minutes:10});
+test('the authorized pilot cannot silently include another learner or their history',()=>{
+ const legacy={rows:[profile('Principal',date),attempt('one')]};
+ assert.equal(pilotProfile(legacy).name,'Principal');
+ const learner={id:'default',name:'Principal'};
+ assert.equal(pilotProfile({rows:[{...legacy.rows[0],learners:[learner]},attempt('one')]}).key,pilotProfile(legacy).key);
+ for(const rows of [[],[{...legacy.rows[0],learners:[learner,{id:'second',name:'Otra persona'}]}],[legacy.rows[0],{...attempt('two'),profileId:'second'}],[{...legacy.rows[0],learners:[{id:'second',name:'Otra persona'}]}]])assert.throws(()=>pilotProfile({rows}));
+ assert.notEqual(pilotProfile({rows:[profile('Otro perfil',date)]}).key,pilotProfile(legacy).key);
+});
 function apply(rows,backup){const m=mergeBackup(rows,backup);const map=new Map(rows.map(r=>[recordKey(r),r]));for(const r of m.writes)map.set(recordKey(r),r);return [...map.values()];}
 test('two-way sync converges, preserves dates, keeps the newest profile and is idempotent',async()=>{
  let local=[attempt('local'),profile('Antes',date)],cloud=[attempt('cloud'),profile('Actual',date+100)];

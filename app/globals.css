@@ -144,3 +144,235 @@ body,button,input,select,textarea{font-family:'DM Sans',system-ui,sans-serif}h1,
 @media(max-width:699px){.bottom-nav{grid-template-columns:repeat(5,minmax(0,1fr))!important}.bottom-nav button{min-width:0;font-size:10px}.bottom-nav button svg{width:21px;height:21px}.mobile-section-menu .pro-nav-group .nav{min-height:45px}}
 .note-learning-mode,.note-stage-buttons{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}.note-learning-mode button,.note-stage-buttons button{padding:10px 15px;border:1px solid #d9c4b4;background:#fffaf5;color:#69574d;border-radius:10px;font-weight:700;cursor:pointer}.note-learning-mode button.selected,.note-stage-buttons button.selected{background:#aa2536;border-color:#aa2536;color:#fff}.note-course-summary{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:13px 0 21px}.note-course-summary h2{margin:7px 0}.note-course-summary p{line-height:1.55}.note-course-summary small{color:#73645c}.note-course-summary .primary{white-space:nowrap}.note-mini-score{max-width:100%;overflow:hidden;margin-top:16px}.note-mini-score .score-wrap{max-width:100%;overflow:hidden}.note-mini-score .score{width:100%;min-width:0}.note-mini-score small{font-size:10px}@media(max-width:700px){.note-course-summary{flex-direction:column;align-items:flex-start}.note-course-summary .primary{white-space:normal}.note-learning-mode button,.note-stage-buttons button{flex:1 1 auto}}
 .practice-next-card{margin:16px 0;padding:17px;border:1px solid #ddcfc3;background:#fffaf3;border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:16px}.practice-next-card strong{color:#6f332b}.practice-next-card p{font-size:12px;line-height:1.5;color:#64544a;max-width:560px}.practice-next-actions{display:flex;flex-wrap:wrap;gap:9px}.practice-next-actions button{font-size:11px}.rhythm-course-toolbar,.rhythm-levels{display:flex;flex-wrap:wrap;gap:9px;margin:13px 0}.rhythm-course-toolbar button,.rhythm-levels button{padding:11px 16px;background:#fffaf4;border:1px solid #dfcabb;color:#6d4b42;border-radius:10px;font-weight:700}.rhythm-course-toolbar button.selected,.rhythm-levels button.selected{background:#aa2536;color:#fff;border-color:#aa2536}.rhythm-lesson-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:22px 0}.rhythm-lesson{padding:22px}.rhythm-lesson h2{margin:10px 0}.rhythm-lesson p{line-height:1.55}.rhythm-lesson-actions{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0}.rhythm-lesson-actions button{font-size:11px}.rhythm-scope{padding:23px}@media(max-width:800px){.practice-next-card{flex-direction:column;align-items:stretch}.rhythm-lesson-grid{grid-template-columns:1fr}.rhythm-course-toolbar button,.rhythm-levels button{flex:1 1 auto}}
+
+.learner-toolbar{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}.learner-toolbar label{display:flex;align-items:center;gap:8px;font-size:12px;color:#695e59}.learner-toolbar select{max-width:260px;min-height:40px;border:1px solid #d9cdc7;border-radius:8px;padding:7px;background:#fffdf9}.profile-form textarea{min-height:100px;padding:12px;width:100%;border:1px solid #d9cdc7;border-radius:8px}.profile-grid{margin:18px 0}.profile-grid .card p{overflow-wrap:anywhere}.pro-nav-aia{border:1.5px solid currentColor;border-radius:50%;font-size:10px!important;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center}@media(max-width:699px){.learner-toolbar{gap:8px}.learner-toolbar label{flex:1;min-width:0;display:block}.learner-toolbar select{display:block;width:100%;max-width:100%}.pro-nav-aia{width:26px;height:26px}.profile-grid{grid-template-columns:1fr}}
+
+.capture-option{display:flex;align-items:center;gap:8px;font-size:13px;margin:12px 0}.recordings-panel{margin:20px 0}.recordings-panel audio{display:block;width:100%;margin:12px 0}.saved-recording{padding:12px 0;border-top:1px solid #e6dbd4}.recordings-panel .secondary{font-size:13px;text-decoration:none}.result[data-quality="good"]{border-left:4px solid #327449}.result[data-quality="review"]{border-left:4px solid #b27c24}.result[data-quality="error"]{border-left:4px solid #b72d3d}.result[data-quality="unrated"]{border-left:4px solid #888}
+
+.repertoire-filters{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}.repertoire-filters label{display:flex;flex-direction:column;gap:6px;min-width:120px;flex:1;font-size:12px}.repertoire-filters select,.repertoire-filters input{min-height:42px;border:1px solid #d9cdc7;border-radius:8px;padding:8px;background:#fffdf9;max-width:100%;width:100%}.repertoire-grid button{text-align:left}.repertoire-grid small{display:block;margin:8px 0}.repertoire-player{border:2px solid #b72d3d}
+
+.music-review-notice{border:1px solid #d8bc99;border-radius:12px;background:#fff9ef;padding:18px;margin:18px 0;color:#5c4334}.music-review-notice h3,.music-review-notice h4{margin:0 0 10px}.music-review-notice p,.music-review-notice li{font-size:13px;line-height:1.6}.music-review-notice ul{padding-left:20px}.music-review-notice li{margin:8px 0}.legacy-audio{border:1px solid #d8cdc4;border-radius:10px;padding:14px;margin:14px 0}.legacy-audio summary{cursor:pointer;font-size:13px;font-weight:600}.legacy-audio audio{width:100%;margin:14px 0}.legacy-audio p{font-size:12px;line-height:1.5}
+
+.note-guide-panel{border:1px solid #c5d6c8;border-radius:12px;padding:18px;margin:18px 0;background:#f7faf5}.note-guide-panel.pending{background:#fff8ee;border-color:#ddc29d}.note-guide-panel h4{margin:0 0 12px}.note-guide-panel p{font-size:13px;line-height:1.6}.note-guide-panel audio{width:100%;margin:12px 0}.note-guide-limit{border-left:3px solid #aa7a31;padding-left:12px}.note-guide-panel details{margin-top:16px}.note-guide-panel summary{cursor:pointer;font-size:13px;font-weight:600}.note-guide-sequence{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.note-guide-sequence>span{display:flex;flex-direction:column;align-items:center;min-width:58px;padding:8px;border:1px solid #d3d8cd;border-radius:9px;background:white}.note-guide-sequence>span.active{border-color:#b72d3d;background:#fff0ef}.note-guide-sequence small{margin:0;font-size:9px}.note-guide-sequence b{font-size:14px}.note-guide-sequence em{font-size:9px;font-style:normal}.note-guide-panel .practice-next-actions a{display:inline-flex;align-items:center;text-decoration:none;font-size:12px}.note-guide-panel .practice-next-actions label{font-size:12px}.note-guide-panel select{min-height:40px;padding:8px;border:1px solid #d3d8cd;border-radius:8px;background:white}
+
+.repertoire-player{scroll-margin-top:90px}
+
+/* Cada sistema conserva un tamaño legible y se imprime sin partirse. */
+.score-system{break-inside:avoid;page-break-inside:avoid}
+.score-system .score{height:auto;display:block;min-width:520px}
+@media print{.score-system .score{min-width:0;width:100%;height:auto}.score-wrap{overflow:visible}}
+
+.practice-mastery{margin:16px 0;padding:18px;border:1px solid #b88737;border-radius:14px;background:#fffaf0;color:#493e32}.practice-mastery[data-passed=true]{background:#edf8ef;border-color:#39704b;color:#214c30}.practice-mastery h3{margin:0 0 8px}.mastery-counts{display:flex;flex-wrap:wrap;gap:10px 24px;margin:12px 0}.mastery-counts span{display:flex;flex-direction:column;font-size:13px}.mastery-counts b{font-size:20px}.practice-mastery small{display:block;line-height:1.6}
+/* Compact practice workspace, including iPad portrait and landscape. */
+.practice-view .hero{min-height:0!important;padding:12px 16px!important;display:block!important;margin-bottom:10px}.practice-view .hero h1,.practice-view .hero .eyebrow,.practice-view .hero>div>p:first-of-type,.practice-view .hero-visual,.practice-view .hero-foot{display:none!important}.practice-view .hero>div:first-child{display:flex!important;align-items:center;flex-wrap:wrap;gap:8px}.practice-view .hero button{margin:0!important;min-height:44px;padding:9px 13px;font-size:12px;grid-row:auto}.practice-view .hero p{margin:0!important;font-size:11px;line-height:1.3;max-width:100%;flex:1}.practice-view main{padding-top:8px}.practice-view .learner-toolbar{margin-bottom:8px;gap:8px}.practice-view .section-title{margin:8px 0}.practice-view .section-title h2{font-size:22px;margin:2px 0}.practice-view .section-title .eyebrow{display:none}.practice-view .practice-panel{padding:14px}.practice-view .exercise-heading{margin-bottom:8px}.practice-view .segmented{margin:8px 0}.practice-view .mode-help{margin:5px 0;font-size:12px;line-height:1.4}.practice-view .practice-mastery{padding:9px 12px;margin:8px 0}.practice-view .practice-mastery h3{font-size:15px;display:inline;margin-right:10px}.practice-view .practice-mastery>p:first-of-type{display:none}.practice-view .mastery-counts{gap:6px 15px;margin:6px 0}.practice-view .mastery-counts span{display:inline;font-size:11px}.practice-view .mastery-counts b{font-size:15px}.practice-view .practice-mastery p{font-size:12px;margin:4px 0}.practice-view .practice-mastery small{font-size:10px;line-height:1.35}.practice-view .note-card{min-height:94px;padding:8px 12px}.practice-view .note-card b{font-size:27px}.practice-view .note-card em{padding-top:7px;margin-top:7px}.practice-view .note-strip{padding:6px 0;gap:8px}.practice-view .transport{margin:8px 0;gap:8px}.practice-view .transport button{min-height:44px;padding:10px;font-size:13px}.practice-view .settings-row{padding:8px 0;gap:12px;margin:0}.practice-view .options{padding:8px 0;gap:12px;margin:0;font-size:11px}.practice-view .practice-next-card{padding:9px 12px;margin:8px 0;gap:8px}.practice-view .practice-next-card p{margin:4px 0;font-size:11px}.practice-view .result{margin:8px 0;padding:12px}.practice-view .practice-extra{margin:8px 0}.practice-extra>summary{cursor:pointer;padding:10px;font-weight:600}.practice-view .fingering-panel{padding:12px}.practice-view .fingering-panel svg{max-height:300px}.practice-view .studio{gap:12px}.practice-view .tips-grid{gap:8px;margin-top:8px}.practice-view .tips-grid article{padding:12px}.practice-view .tips-grid h3{font-size:14px;margin:4px 0}.practice-view .tips-grid p{font-size:12px;line-height:1.4}
+@media(min-width:900px){.practice-view .studio{grid-template-columns:minmax(0,1fr) 185px!important;align-items:start}}
+@media(max-width:899px){.practice-view .studio{grid-template-columns:minmax(0,1fr)!important}.practice-view .fingering-panel{order:2}.practice-view .fingering-panel svg{max-height:200px}}
+
+/* Keep the personal Hohner visible without restoring the tall cover. */
+.practice-view .hero{display:grid!important;grid-template-columns:minmax(0,1fr) 96px;gap:12px;align-items:center}
+.practice-view .hero-visual{display:flex!important;min-height:122px;height:122px;width:96px}
+.practice-view .hero-visual .hero-photo{display:block;position:static;width:82px;height:122px;object-fit:contain;transform:none;filter:drop-shadow(3px 3px 4px #180b1644)}
+.practice-view .hero-visual .orb,.practice-view .hero-visual .float-note,.practice-view .hero-tag{display:none!important}
+.practice-view .practice-mastery{padding:7px 10px;margin:6px 0;border-radius:9px}
+.mastery-summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.practice-view .practice-mastery h3{margin:0;font-size:13px;white-space:nowrap}
+.practice-view .mastery-counts{display:flex;flex-wrap:wrap;gap:3px 12px;margin:0}
+.practice-view .mastery-counts span,.practice-view .mastery-counts b{font-size:12px}
+.practice-mastery details{margin-top:3px}.practice-mastery summary{cursor:pointer;font-size:11px;color:inherit;min-height:24px;display:list-item;line-height:24px}
+@media(max-width:480px){.practice-view .hero{grid-template-columns:minmax(0,1fr) 64px;padding:9px!important;gap:6px}.practice-view .hero-visual{width:64px}.practice-view .hero-visual .hero-photo{width:60px}}
+
+
+/* Responsive study layout: one aligned stack for the note and its guidance. */
+@media screen{
+ .workspace{min-width:0}
+ main{width:100%}
+ .practice-view .studio{grid-template-columns:minmax(0,1fr) 220px!important;align-items:start;gap:14px}
+ .practice-panel{container-name:practice;container-type:inline-size}
+ .practice-guidance{display:flex;flex-direction:column;gap:12px;min-width:0}
+ .practice-guidance .fingering-panel{width:100%;align-self:stretch;order:0}
+ .practice-view .practice-guidance .tips-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin:0}
+ .practice-view .tip-card{gap:8px;padding:12px;border-radius:14px;overflow-wrap:normal}
+ .practice-view .tip-card>div{min-width:0}
+ .practice-view .tip-icon{flex:0 0 20px}
+ .practice-view .tip-card h3{font-size:13px;line-height:1.4;margin:0 0 6px;letter-spacing:0}
+ .practice-view .tip-card p{font-size:12px;line-height:1.55;color:#796657}
+ .practice-view .fingering-panel{border-radius:14px;padding:14px 12px}
+ .practice-view .fingering-panel .flute{height:240px;max-height:240px;width:100%;max-width:155px}
+ .practice-view .fingering-panel .eyebrow{font-size:9px}
+ .practice-view .fingering-panel .current-note{margin-top:8px}
+ .practice-view .fingering-panel .legend{font-size:10px;gap:12px;flex-wrap:wrap}
+ .practice-view .fingering-panel>p{font-size:11px;line-height:1.5;margin:10px 0}
+ .practice-view .fingering-panel>.pill{font-size:10px;max-width:100%;white-space:normal;text-align:center}
+ .practice-view .practice-panel{padding:16px;border-radius:14px;overflow-wrap:normal}
+ .practice-view .exercise-heading select{max-width:none;font-size:15px;min-height:32px;letter-spacing:-.3px}
+ .practice-view .exercise-heading p{font-size:12px}
+ .practice-view .segmented button{min-height:40px;font-size:13px;padding:8px}
+ .practice-view .notation-header{margin:10px 0 6px;font-size:12px;flex-wrap:wrap}
+ .practice-view .notation-header span{font-size:10px}
+ .practice-view .note-strip{gap:8px;padding:6px 0 10px}
+ .practice-view .note-card{flex-basis:64px;min-height:94px;padding:8px}
+ .practice-view .note-card b{font-size:26px}
+ .practice-view .note-card>small,.practice-view .note-card>span,.practice-view .note-card em{font-size:10px}
+ .practice-view .transport{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .practice-view .transport button{min-height:46px;font-size:13px;padding:10px 8px;white-space:normal;overflow-wrap:normal;line-height:1.4}
+ .practice-view .transport button svg{flex-shrink:0;width:18px;height:18px}
+ .practice-view .capture-option{font-size:12px;line-height:1.5;margin:8px 0;min-height:36px}
+ .practice-view input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin:0}
+ .practice-view .settings-row{display:grid;grid-template-columns:minmax(110px,1fr) auto minmax(80px,1fr);gap:12px;padding:12px 0}
+ .practice-view .settings-row>label:first-child{font-size:11px}
+ .practice-view .settings-row select{font-size:12px;min-height:32px;max-width:100%}
+ .practice-view .tempo{font-size:22px;padding-left:12px;white-space:nowrap}
+ .practice-view .tempo small{font-size:10px}
+ .practice-view .volume{margin-left:0;justify-self:end;width:100%;max-width:125px;gap:8px}
+ .practice-view .volume input{min-width:0;width:100%;min-height:32px}
+ .practice-view .options{gap:4px 14px;padding:8px 0}
+ .practice-view .options label{font-size:12px;min-height:36px;line-height:1.4;gap:8px}
+ .practice-view .options .text-button{font-size:12px;min-height:36px}
+ .practice-view .practice-panel>details{margin-top:8px;font-size:12px}
+ .practice-view .practice-panel>details>summary{padding:10px 0;line-height:1.5}
+ .practice-view .practice-next-card{display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:12px;margin:10px 0 0;overflow-wrap:normal}
+ .practice-view .practice-next-card>div{min-width:0}
+ .practice-view .practice-next-card strong{font-size:13px}
+ .practice-view .practice-next-card p{font-size:12px;line-height:1.5;max-width:none;margin:5px 0 0}
+ .practice-view .practice-next-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:8px;min-width:0}
+ .practice-view .practice-next-actions>*{min-width:0;white-space:normal;overflow-wrap:normal;word-break:normal;line-height:1.4;min-height:44px;font-size:12px;padding:10px}
+ .practice-view .practice-next-actions svg{flex-shrink:0}
+ .practice-view .practice-mastery{padding:10px;margin:8px 0}
+ .practice-view .mastery-summary{gap:6px 12px}
+ .practice-view .mastery-counts{gap:4px 12px}
+ .practice-view .practice-mastery summary{padding:4px 0;min-height:32px;line-height:24px;font-size:12px}
+ .practice-view .hero{grid-template-columns:minmax(0,1fr) 64px;gap:12px;padding:12px 16px!important;border-radius:16px;min-height:0}
+ .practice-view .hero>div:first-child{display:grid!important;grid-template-columns:auto minmax(130px,1fr) auto;gap:10px;align-items:center}
+ .practice-view .hero p{font-size:12px;line-height:1.5}
+ .practice-view .hero button{font-size:12px;line-height:1.4;white-space:normal}
+ .practice-view .hero>.hero-visual{padding:0;min-height:88px;height:88px;width:64px}
+ .practice-view .hero>.hero-visual .hero-photo{width:60px;height:88px}
+ .practice-view .section-title{margin:14px 0 10px;align-items:center}
+ .practice-view .section-title h2{font-size:23px;line-height:1.3}
+ .practice-view .section-title .pill{font-size:10px}
+ .practice-view .practice-extra{margin:14px 0 0}
+ .practice-view .practice-extra>summary{font-size:13px;min-height:44px;padding:12px 0}
+ .recordings-panel{margin:8px 0 0;padding:18px}
+ .recordings-panel h2{font-size:20px;line-height:1.35;margin-bottom:8px}
+ .recordings-panel h3{font-size:16px;line-height:1.4;margin:14px 0 6px}
+ .recordings-panel p{font-size:13px;line-height:1.6}
+ .recordings-panel small{display:block;font-size:11px;line-height:1.6;margin-top:8px}
+ .recordings-panel audio{max-width:100%}
+ .source-line{font-size:11px;line-height:1.6;margin-top:16px}
+ .sync-notice{font-size:12px;line-height:1.6}
+ .card{overflow-wrap:normal}
+ .file-row,.backup-actions,.rhythm-lesson-actions{min-width:0;flex-wrap:wrap}
+ .file-row>div,.backup-actions>*{min-width:0;overflow-wrap:anywhere}
+ .page-title h1{font-size:clamp(27px,3vw,37px);line-height:1.25}
+ .page-title p{line-height:1.65}
+}
+@media screen and (min-width:700px){
+ .topbar{height:56px;min-height:56px}
+ .topbar .mobile-brand{display:none}
+ .topbar .breadcrumbs{display:flex!important;font-size:12px;margin:0}
+ .workspace>.responsive-trail{display:none}
+ .icon-button{min-width:44px;min-height:44px}
+ .practice-view main{padding-top:12px}
+ .practice-view .learner-toolbar{margin-bottom:12px;gap:12px}
+ .practice-view .learner-toolbar label{font-size:12px}
+ .practice-view .learner-toolbar select{font-size:13px;max-width:320px}
+}
+@media screen and (min-width:700px) and (max-width:1100px){
+ .sidebar{width:176px;padding:22px 10px 14px}
+ .workspace{margin-left:176px;width:calc(100% - 176px)}
+ .sidebar .brand{margin:0 4px 22px}
+ .sidebar .brand .brand-logo{max-width:152px;height:auto}
+ .sidebar .brand>small{margin-left:0;font-size:6px;letter-spacing:1px;text-align:center}
+ .sidebar .nav-caption{font-size:8px;letter-spacing:1px;margin:0 8px 12px}
+ .sidebar .nav{font-size:12px;min-height:44px;padding:9px 8px;gap:8px;margin-bottom:3px}
+ .sidebar .pro-nav-icon{width:23px;height:23px;flex-basis:23px}
+ .sidebar .pro-nav-group-title{font-size:8px;letter-spacing:.6px;margin:16px 6px 7px}
+ .sidebar .sidebar-note{display:none}
+ .sidebar .person{margin-top:auto;padding:14px 4px 0;gap:8px}
+ .sidebar .person b{font-size:12px}.sidebar .person small{font-size:10px}
+ main{padding:20px 20px 0}.topbar{padding-inline:20px}
+ .practice-view .studio{grid-template-columns:minmax(0,1fr) 190px!important;gap:12px}
+ .practice-view .hero>div:first-child{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .practice-view .hero p{grid-column:1/-1;grid-row:2}
+ .practice-view .hero>.hero-visual{height:106px;min-height:106px}
+ .practice-view .hero>.hero-visual .hero-photo{height:106px}
+ .practice-view .section-title h2{font-size:21px}
+ .repertoire-grid,.rhythm-lesson-grid,.three-col{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .intro-card{grid-template-columns:minmax(0,1fr) 120px;padding:24px}
+ .intro-card .flute{width:120px;max-width:100%}
+}
+@media screen and (min-width:700px) and (max-width:799px){
+ .sidebar{width:160px}.workspace{margin-left:160px;width:calc(100% - 160px)}
+ main{padding-inline:16px}.topbar{padding-inline:16px}
+ .sidebar .nav{font-size:11px;gap:6px}
+ .practice-view .studio{grid-template-columns:minmax(0,1fr) 172px!important;gap:10px}
+ .practice-view .practice-panel{padding:12px}
+ .practice-view .tip-card{padding:10px;gap:6px}
+ .practice-view .tip-card h3{font-size:12px}
+ .practice-view .tip-card p{font-size:12px}
+}
+@container practice (max-width:430px){
+ .practice-view .settings-row{grid-template-columns:minmax(0,1fr) auto;gap:8px}
+ .practice-view .volume{grid-column:1/-1;justify-self:stretch;max-width:none;width:100%}
+ .practice-view .volume input{max-width:150px}
+ .practice-view .transport button{font-size:12px;gap:6px}
+ .practice-view .practice-next-actions{grid-template-columns:minmax(0,1fr)}
+ .practice-view .exercise-heading{flex-wrap:wrap}
+ .practice-view .exercise-heading>div:nth-child(2){min-width:120px}
+ .practice-view .notation-header{align-items:flex-start;gap:4px}
+}
+@media screen and (max-width:699px){
+ .practice-view .studio{grid-template-columns:minmax(0,1fr)!important;gap:12px}
+ .practice-guidance{gap:12px}
+ .practice-view .practice-guidance .fingering-panel{order:0;display:grid;grid-template-columns:minmax(0,1fr) 110px;grid-template-rows:repeat(5,auto);min-height:220px;align-items:center;padding:16px}
+ .practice-view .fingering-panel .flute{position:static;grid-column:2;grid-row:1/6;width:110px;height:210px;max-height:210px;max-width:100%;align-self:center}
+ .practice-view .fingering-panel .current-note{margin:4px 0}
+ .practice-view .fingering-panel .legend{gap:8px}
+ .practice-view .fingering-panel>p{margin:8px 0;font-size:11px;text-align:left}
+ .practice-view .fingering-panel>.pill{justify-self:start}
+ .practice-view .hero{grid-template-columns:minmax(0,1fr) 52px;padding:12px!important;gap:10px}
+ .practice-view .hero>div:first-child{grid-template-columns:minmax(0,1fr)}
+ .practice-view .hero p{grid-column:1;grid-row:auto;font-size:12px}
+ .practice-view .hero button{grid-column:1;grid-row:auto;justify-self:stretch;padding:10px;font-size:12px}
+ .practice-view .hero>.hero-visual{grid-column:2;grid-row:1;height:138px;min-height:138px;width:52px;align-self:center}
+ .practice-view .hero>.hero-visual .hero-photo{height:130px;width:48px}
+ .practice-view .section-title{gap:8px;align-items:flex-start}
+ .practice-view .section-title h2{font-size:21px}
+ .practice-view .practice-panel{padding:12px}
+ .practice-view .learner-toolbar{display:grid;grid-template-columns:minmax(80px,1fr) minmax(0,2fr);gap:8px;margin-bottom:10px}
+ .practice-view .learner-toolbar label{font-size:12px;display:block}
+ .practice-view .learner-toolbar select{font-size:13px;width:100%;max-width:100%;margin-top:4px;min-height:42px}
+ .practice-view .options label{flex:1 1 180px}
+ .practice-view .practice-next-actions{grid-template-columns:minmax(0,1fr)}
+ .recordings-panel{padding:16px}.recordings-panel h2{font-size:19px}
+ .repertoire-grid,.rhythm-lesson-grid,.three-col{grid-template-columns:minmax(0,1fr)}
+ .page-title p{font-size:13px}
+ .card .primary,.card .secondary{white-space:normal;line-height:1.4;min-height:44px;max-width:100%}
+ footer{flex-wrap:wrap;font-size:11px;gap:14px}footer button{font-size:12px;min-height:44px}
+ .bottom-nav button{font-size:10px;overflow-wrap:normal}
+}
+@media screen and (max-width:359px){
+ main{padding-inline:12px}
+ .practice-view .transport{grid-template-columns:minmax(0,1fr)}
+ .practice-view .learner-toolbar{grid-template-columns:minmax(0,1fr)}
+ .practice-view .fingering-panel .legend{flex-direction:column}
+}
+@media screen{
+ .practice-view .hero{grid-template-rows:auto}
+}
+@media screen and (min-width:700px) and (max-width:1366px){
+ .sidebar .pro-nav-group{margin-bottom:8px}
+ .sidebar .pro-nav-group-title{margin:8px 0 4px;padding:4px 6px}
+}
+@media screen and (min-width:1101px) and (max-width:1366px){
+ .sidebar{width:200px;padding:24px 12px 16px}
+ .workspace{margin-left:200px;width:calc(100% - 200px)}
+ .sidebar .brand{margin:0 4px 24px}.sidebar .brand .brand-logo{max-width:168px}
+ .sidebar .brand>small{margin-left:0;text-align:center;font-size:6px;letter-spacing:1px}
+ .sidebar .nav-caption{margin-left:8px;font-size:8px}
+ .sidebar .nav{font-size:12px;min-height:44px;gap:9px;padding-inline:9px}
+ .sidebar .sidebar-note{display:none}
+ .sidebar .person{margin-top:auto}
+ main{padding-inline:26px}.topbar{padding-inline:26px}
+}
+.source-note-sequence{font-size:1.1rem;font-weight:700;letter-spacing:.035em;line-height:1.9;word-spacing:.25em;color:var(--foreground,#362b2a)}
