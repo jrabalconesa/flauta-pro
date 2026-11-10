@@ -19,3 +19,7 @@ La base contiene únicamente código común. `app/repertoire-library.tsx` es un 
 Las copias de versión 2 admiten varios perfiles y conservan los perfiles e instrumentos adicionales al importar una copia anterior o incompleta. El piloto de conexión sigue limitado a un único perfil principal en cada extremo; rechaza copias con otros usuarios antes del intercambio y verifica que los perfiles siguen siendo los aprobados. No se inicia ninguna conexión desde la tarea de código. La prueba real en dos dispositivos continúa pendiente.
 
 El repertorio completo aún no está certificado musicalmente. Las piezas revisadas se identifican como tales sin certificar los MP3 históricos.
+
+## Sincronización del 10 de noviembre de 2026
+
+Se incorpora Marcha de los Santos, adaptación de estudio en SOL con cinco notas, y notación ligada para sonidos de 2,5 pulsos. Sites conserva la ficha PDF, los 19 MusicXML, 19 MIDI y 57 MP3 revisados. Pages incorpora la práctica y sus descargas generadas localmente. Las 26 bases comunes coinciden; no se copian los adaptadores privados ni datos personales. Validación: 51 pruebas Sites, 35 pruebas Pages, comprobación de tipos, compilaciones y verificación de 19 MusicXML/57 MP3. La práctica y su partitura se comprobaron también en Sites publicado en ordenador. Siguen pendientes la revisión musical completa, el iPad real y el piloto en dos dispositivos.
