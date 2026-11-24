@@ -3,7 +3,7 @@
   "app": "flauta-pro",
   "repository": "jrabalconesa/flauta-pro",
   "site_project_id": "appgprj_6adfb19c19a081918e1fef80cacd0a8e",
-  "updated": "2026-11-23",
+  "updated": "2026-11-24",
   "files": {
     "app/page.tsx": "629881e6f5fbfbccd7fffc54989a4cb8afcc1b7f3c0a661fc2cc502d4203b8c4",
     "app/audio.ts": "532e85bd6774ca1c99c67cc0f95be60c01446cce9725c98c78007a82982fbf56",
@@ -30,11 +30,14 @@
     "tests/practice-status.test.mjs": "4ed3c29687335b3ef857be0363ebeb3f00d92a6370849e09eacc7a41b2910b65",
     "tests/practice-timing.test.mjs": "5428b6cf0d05127c2d1a9cae4a1612e95bbc6f25175da65a95ef48bc2150f56c",
     "tests/progression.test.mjs": "fe6f146b4bceba6c0614b8a9ad8e1036cbbadd0746aed22e9d536560a83c16f3",
-    "tests/sync.test.mjs": "7018dd42b17a474050cf985ff2f333269cd7acbf2a934733cb3fe6b89fe87084"
+    "tests/sync.test.mjs": "7018dd42b17a474050cf985ff2f333269cd7acbf2a934733cb3fe6b89fe87084",
+    "app/repertoire-library.tsx": "0d06d63884fc2f6ec44c12189ad282b5fb47cb2b895239d35238d6e834a149e2",
+    "lib/cancionero-v93.json": "38dcb0f5afcdd908768c812da83273e78416c4f310d2997e8a43839f4125b380",
+    "lib/study-download.ts": "f845c8689d6f9802c7b98296937d68317de4670931d1b656d0f762027385978b",
+    "tests/cancionero-v93.test.mjs": "111e454f9533739110fab20e8d8e390d92bdcf4844cd4dc73e002cef390a55b6"
   },
   "platform_adapters": [
     "lib/platform.ts",
-    "app/repertoire-library.tsx",
     "lib/local-store.ts",
     "lib/local-records.ts",
     "app/sync/page.tsx",
@@ -48,11 +51,17 @@
     "lib/note-guides.json",
     "public/repertorio/**",
     "public/fuentes/cancionero-progresivo*.pdf",
-    "public/fuentes/partituras-revisadas.pdf",
-    "lib/cancionero-v93.json",
-    "public/cancionero-v93/**"
+    "public/fuentes/partituras-revisadas.pdf"
   ],
   "policy": "three-way: compare both against these hashes; transfer one-sided code changes; stop on incompatible edits; preserve local/cloud platform adapters and Site audience; never copy user data, credentials, personal library or database state; preserve the manually authorized single-primary-profile Flauta pilot; JSON copies retain additional learners and their inventory",
   "sites_commit": "2fb5131a8d91dc68caeb5867d7b61ce09f9f7477",
-  "sites_version": 58
+  "sites_version": 58,
+  "public_content": {
+    "authorized": "2026-11-24",
+    "scope": [
+      "lib/cancionero-v93.json",
+      "public/cancionero-v93/**"
+    ],
+    "note": "User explicitly requested the complete current cancionero on GitHub Pages; learner data and private uploads remain excluded."
+  }
 }

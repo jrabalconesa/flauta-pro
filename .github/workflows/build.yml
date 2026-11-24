@@ -22,6 +22,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - run: node scripts/restore-cancionero-assets.mjs
       - run: npm ci
       - run: npm run check && npm test && npm run build:pages
       - uses: actions/configure-pages@v5
@@ -49,3 +50,4 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+

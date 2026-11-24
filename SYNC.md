@@ -14,7 +14,7 @@ Validación: node --experimental-strip-types --test tests/sync.test.mjs; en GitH
 
 ## Código revisado en noviembre de 2026
 
-La base contiene únicamente código común. `app/repertoire-library.tsx` es un adaptador: el catálogo personal completo y los nuevos documentos y audios permanecen en Sites privado; Pages abre esa biblioteca mediante un enlace. Las prácticas didácticas revisadas se ejecutan en ambas plataformas. `lib/platform.ts` conserva las rutas cloud/local y las grabaciones permanecen fuera de las copias JSON.
+Desde la autorización expresa del usuario del 24 de noviembre de 2026, el cancionero v93 completo se publica también en GitHub Pages: 116 fichas de estudio, tres anexos, PDF general, PDF por ficha, MusicXML, MIDI y MP3. `app/repertoire-library.tsx`, `lib/cancionero-v93.json` y `lib/study-download.ts` son comunes. Los 957 materiales se restauran desde `cancionero-assets/` con verificación SHA-256 antes de comprobar, probar y compilar. `lib/platform.ts` mantiene el guardado local y las funciones cloud separadas. Los datos de los alumnos, archivos privados subidos y grabaciones continúan fuera del repositorio; las grabaciones no se incluyen en las copias JSON.
 
 Las copias de versión 2 admiten varios perfiles y conservan los perfiles e instrumentos adicionales al importar una copia anterior o incompleta. El piloto de conexión sigue limitado a un único perfil principal en cada extremo; rechaza copias con otros usuarios antes del intercambio y verifica que los perfiles siguen siendo los aprobados. No se inicia ninguna conexión desde la tarea de código. La prueba real en dos dispositivos continúa pendiente.
 
@@ -23,3 +23,4 @@ El repertorio completo aún no está certificado musicalmente. Las piezas revisa
 ## Sincronización del 10 de noviembre de 2026
 
 Se incorpora Marcha de los Santos, adaptación de estudio en SOL con cinco notas, y notación ligada para sonidos de 2,5 pulsos. Sites conserva la ficha PDF, los 19 MusicXML, 19 MIDI y 57 MP3 revisados. Pages incorpora la práctica y sus descargas generadas localmente. Las 26 bases comunes coinciden; no se copian los adaptadores privados ni datos personales. Validación: 51 pruebas Sites, 35 pruebas Pages, comprobación de tipos, compilaciones y verificación de 19 MusicXML/57 MP3. La práctica y su partitura se comprobaron también en Sites publicado en ordenador. Siguen pendientes la revisión musical completa, el iPad real y el piloto en dos dispositivos.
+

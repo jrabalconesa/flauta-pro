@@ -5,3 +5,6 @@ Edición para GitHub Pages de Flauta PRO, basada en la fuente de ChatGPT Sites 4
 Incluye práctica con micrófono, reproducción, digitaciones, tablatura, partitura, AIA y biblioteca. El perfil, las sesiones y los archivos de esta edición se guardan en IndexedDB del navegador, sin sincronización con Sites. Borrar los datos del sitio elimina esos registros; el progreso puede exportarse a CSV.
 
 Desarrollo: `npm ci`, `npm run dev`. Validación: `npm run check` y `npm run build`. Publicación desde `/docs` de la rama `main`.
+
+
+El cancionero v93 completo está autorizado para publicación en Pages. Antes de compilar una copia nueva: `node scripts/restore-cancionero-assets.mjs`. El script valida las huellas del paquete; los datos personales y archivos de usuarios no forman parte del repositorio.
